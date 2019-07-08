@@ -41,7 +41,7 @@ Some functions in the ESS, such as creating a new user, will require a Gmail ema
     
 The email template will look similar to this:
 
-![Sample ESS Email](docs/sampleEmailTemplate.PNG)
+![Sample ESS Email](/docs/sampleEmailTemplate.png)
 
 #### Other notes
 
