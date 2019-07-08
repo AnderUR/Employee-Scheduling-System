@@ -2,7 +2,7 @@
 
 ## About
 
-The original purpose of this project was to provide an easy solution for college assistants to sign in/out and remove paper usage at the New York City College of Technology’s Ursula Library. The ESS was heavily integrated with the internal web app used at the library. With multiple projects running in one CodeIgniter installation, I needed to do extensive cleanup and editing to allow this project to be open source. This will explain why some files may have just one function, or strange naming conventions, or why some functions may have error handling, while others do not, etc. Some of the ESS capabilities include creating employee shifts, real-time sign-in status, simple employee substitution process, adding anouncements, among others. For full capabilities, please see the attached **documentation**. I hope you are able to extend this project and make great usage of it.
+The original purpose of this project was to provide an easy solution for college assistants to sign in/out and remove paper usage at the New York City College of Technology’s Ursula Library. The ESS was heavily integrated with the internal web app used at the library. With multiple projects running in one CodeIgniter installation, I needed to do extensive cleanup and editing to allow this project to be open source. This will explain why some files may have just one function, or strange naming conventions, or why some functions may have error handling, while others do not, etc. Some of the ESS capabilities include creating employee shifts, real-time sign-in status, simple employee substitution process, adding anouncements, among others. For full capabilities, please see the attached [documentation](/docs/ESS_Help_Doc.pdf). I hope you are able to extend this project and make great usage of it.
 
 ## Prerequisite
 
@@ -68,3 +68,6 @@ The email template will look similar to this:
 
 #### People or Insitution
 - Ursula C. Schwerin Library at the City College of Technology of New York for providing the servers and helping shape the application through usage and recommendations. 
+
+## License
+- This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.md) file for details
