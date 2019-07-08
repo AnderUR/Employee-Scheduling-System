@@ -46,7 +46,7 @@ The email template will look similar to this:
 #### Other notes
 
 - The application will not work without at least one semester in the database. I added a temporary one for you, which you can edit once you login.
-- Although I added a temporary user for you of admin level privilege, you can go to 'yourDomain'/Libservices/index.php/auth/index to add more users. This link is found in the application as well in the add employee section with further information. You will not be able to access this page without a high privilege user logged in.
+- Although I added a temporary user for you of admin level privilege, you can go to 'yourDomain'/Libservices/index.php/auth/index to add more users. This link is found in the application as well as in the add employee section with further information. You will not be able to access this page without a high privilege user logged in.
 
 ## Built With
 
