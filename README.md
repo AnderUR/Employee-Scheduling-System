@@ -70,4 +70,4 @@ The email template will look similar to this:
 - Ursula C. Schwerin Library at the City College of Technology of New York for providing the servers and helping shape the application through usage and recommendations. 
 
 ## License
-- This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.md) file for details
+- This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE) file for details
