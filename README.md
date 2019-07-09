@@ -48,7 +48,7 @@ The email template will look similar to this:
 
 - The application will not work without at least one semester in the database. I added a temporary one for you, which you can edit once you login.
 - Although I added a user for you of admin level privilege, you can go to 'yourDomain'/Libservices/index.php/auth/index to add more users. This link is found in the application as well as in the add employee section with further information. You will not be able to access this page without a high privilege user logged in.
-- Ion Auth files were modified, especially the views. Take note of this if you wish to upgrade to the latest version, which as of this writing is v3.
+- Ion Auth files were modified, especially the views. signature_pad was also modified. Take note of this if you wish to update these plugins later on.
 - Instead of using the ipadPage to sign in a shift, you can use 'yourDomain'/libservices/index.php/timesheet/ipadPageCA/12345, where 12345 is the employees' barcode. This simplifies the process a bit since there will not be a need to enter the employee's barcode in the ipadPage eacn time.
 
 ## Built With
