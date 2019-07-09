@@ -26,6 +26,7 @@ The original purpose of this project was to provide an easy solution for college
 6.	Place the ESS docs folder wherever you can easily access them for reference.
 7.	Head to 'yourDomain'/Libservices/index.php/auth/login to **login with barcode 12345 or email: ess@ess.com and password: password**. 
 8.	Read the docs or use the Help menu located under the username at the top right to use the application.
+9.  Using the documentation, schedule an employee for work, then try to sign in and out at 'yourDomain'/Libservices/index.php/Timesheet/ipadPage
 
 #### Setup Email in The Application
 
@@ -46,7 +47,8 @@ The email template will look similar to this:
 #### Other notes
 
 - The application will not work without at least one semester in the database. I added a temporary one for you, which you can edit once you login.
-- Although I added a temporary user for you of admin level privilege, you can go to 'yourDomain'/Libservices/index.php/auth/index to add more users. This link is found in the application as well as in the add employee section with further information. You will not be able to access this page without a high privilege user logged in.
+- Although I added a user for you of admin level privilege, you can go to 'yourDomain'/Libservices/index.php/auth/index to add more users. This link is found in the application as well as in the add employee section with further information. You will not be able to access this page without a high privilege user logged in.
+- Instead of using the ipadPage to sign in a shift, you can use 'yourDomain'/libservices/index.php/timesheet/ipadPageCA/12345, where 12345 is the employees' barcode. This simplifies the process a bit since there will not be a need to enter the employee's barcode in the ipadPage eacn time.
 
 ## Built With
 
