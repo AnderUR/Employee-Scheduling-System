@@ -7,26 +7,25 @@ The original purpose of this project was to provide an easy solution for college
 ## Prerequisite
 
 1. Install a server, such as WAMP, or XAMP.
-2. Download a copy of CodeIgniter into your servers' web folder.
-3. Make sure you can access CodeIgniter in your browser.
+2. Download a copy of CodeIgniter into your servers' web folder and rename it Libservices.
+3. Make sure you can access your installation of Codeigniter in your browser by going to 'yourDomain'/Libservices.
 
 ## Installation And Deployment
 
-1.	Rename the CodeIgniter folder to Libservices.
-2.	Drop the ESS assets folder where your Libservices application folder is located.
-3.	Place all ESS files and folders in their respective Libservices folders. 
+1.	Drop the ESS assets folder where your Libservices application folder is located.
+2.	Place all ESS files and folders in their respective Libservices folders. 
     - Drop the files inside the ESS config folder into your Libservices/application/config folder, replace the files in destination, or edit your originals accordingly.
     - Drop the files inside the ESS controllers folder into your Libservices/application/controllers folder.
     - Drop the files inside the ESS language\english folder into your Libservices/language/english folder.
     - Drop the files inside the ESS library folder into your Libservices/application/libraries folder.
     - Drop the files inside the ESS models folder into your Libservices/application/models folder.
     - Drop the folders inside the ESS views folder into your Libservices/application/views folder.
-4.	In the ESS sql folder, locate the sql file. The DEFINER for procedures is ‘root’@’localhost’ and you need to change it if you are not using a local server. You can change it by opening the file in your code editor and doing a search/replace accordingly. 
-5.	Load the ESS sql file into your database, through the command line, MySQL Workbench or other, making sure to include both structure and data.
-6.	Place the ESS docs folder wherever you can easily access them for reference.
-7.	Head to 'yourDomain'/Libservices/index.php/auth/login to **login with barcode 12345 or email: ess@ess.com and password: password**. 
-8.	Read the docs or use the Help menu located under the username at the top right to use the application.
-9.  Using the documentation, schedule an employee for work, then try to sign in and out at 'yourDomain'/Libservices/index.php/Timesheet/ipadPage
+3.	In the ESS sql folder, locate the sql file. The DEFINER for procedures is ‘root’@’localhost’ and you need to change it if you are not using a local server. You can change it by opening the file in your code editor and doing a search/replace accordingly. 
+4.	Load the ESS sql file into your database, through the command line, MySQL Workbench or other, making sure to include both structure and data.
+5.	Place the ESS docs folder wherever you can easily access them for reference.
+6.	Head to 'yourDomain'/Libservices/index.php/auth/login to **login with barcode 12345 or email: ess@ess.com and password: password**. 
+7.	Read the docs or use the Help menu located under the username at the top right to use the application.
+8.  Using the documentation, schedule an employee for work, then try to sign in and out at 'yourDomain'/Libservices/index.php/Timesheet/ipadPage
 
 #### Setup Email in The Application
 
