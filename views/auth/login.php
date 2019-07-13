@@ -76,10 +76,10 @@
             <div class="hidden center">
                 <?php echo form_open('housekeeper/updateBarcode'); ?>
                 <fieldset class="content">
-                    <label for="barcode">Barcode</label>
+                    <label for="barcode">New Barcode</label>
                     <input id="barcode" type="text" name="updatedBarcode" />
                     <div class="wrapper">
-                        <label for="email">New email</label>
+                        <label for="email">Email</label>
                         <input id="email" type="email" name="email" />
                     </div>
                     <div class="wrapper">
