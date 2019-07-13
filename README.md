@@ -49,6 +49,7 @@ The email template will look similar to this:
 - Although I added a user for you of admin level privilege, you can go to 'yourDomain'/Libservices/index.php/auth/index to add more users. This link is found in the application as well as in the add employee section with further information. You will not be able to access this page without a high privilege user logged in.
 - Ion Auth files were modified, especially the views. signature_pad was also modified. Take note of this if you wish to update these plugins later on.
 - Instead of using the ipadPage to sign in a shift, you can use 'yourDomain'/libservices/index.php/timesheet/ipadPageCA/12345, where 12345 is the employees' barcode. This simplifies the process a bit since there will not be a need to enter the employee's barcode in the ipadPage eacn time.
+- The docs folder includes an outline I wrote at one point when we were updating the ESS. It was meant to be an inventory type list of the functionality of the system, which included descriptions for some of the items. It should help you further understand the ESS. The folder also includes a how-to for adding more help menus if you decide to add functionality.
 
 ## Built With
 
