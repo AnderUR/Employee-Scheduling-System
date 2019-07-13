@@ -32,7 +32,7 @@ The original purpose of this project was to provide an easy solution for college
 Some functions in the ESS, such as creating a new user, will require a Gmail email to be setup. 
 
 1.	In Application/config folder, change smtp_user and smtp_pass in the emai.php file for emailing to work. The Gmail account used must be allowed smtp requests, although I noticed that creating a new account didn’t create such issue; you may want to do that for testing purposes.
-2.	Also in the config folder, change the ion_auth file’s  admin_email to whichever email you want, which will be used for the reply-to function in Gmail.
+2.	Also in the config folder, change the ion_auth file’s  admin_email to whichever email you want, which will be used for the reply-to function in Gmail if you need it.
 3.  To modify the email content, search for $emailData['title'] in the project and you will find a few instances of that together with the other required pieces
     - To show the logo picture, or change it, modify the url in $emailData['titleImgSrc'] to a publicly accessible picture. 
     - To change the title, modify $emailData['title'].
