@@ -6,8 +6,8 @@ The original purpose of this project was to provide an easy solution for college
 
 ## Prerequisite
 
-1. Install a server, such as WAMP, or XAMP and run it.
-2. Download a copy of CodeIgniter into your servers' web folder and rename it Libservices.
+1. Install a server, such as WAMP, or XAMP and run it. This project was built using PHP 5.6.
+2. Download a copy of CodeIgniter 3 into your servers' web folder and rename it Libservices.
 3. Make sure you can access your installation of Codeigniter in your browser by going to 'yourDomain'/Libservices.
 
 ## Installation And Deployment
