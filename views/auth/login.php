@@ -15,12 +15,8 @@
     <h1>Login with email and password</h1>
     <?php echo form_open('auth/login', 'class="item2"'); ?>
     <fieldset class="content">
-        <label for="email">Email</label>
-        <input id="email" type="email" name="identity" autofocus/>
-
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" />
-
+        <label for="email">Email<input id="email" type="email" name="identity" autofocus /></label>
+        <label for="password">Password<input id="password" type="password" name="password" /></label>
         <div class="buttonSection">
             <button type="submit" name="submit">Login</button>
         </div>
@@ -35,9 +31,7 @@
             <div class="hidden center">
                 <?php echo form_open('auth/forgot_password'); ?>
                 <fieldset class="content">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="identity" />
-
+                    <label for="email">Email<input id="email" type="email" name="identity" /></label>
                     <div class="buttonSection">
                         <button type="submit" name="forgot_password_submit_btn">Submit</button>
                     </div>
@@ -50,20 +44,10 @@
             <div class="hidden center">
                 <?php echo form_open('housekeeper/updateEmail'); ?>
                 <fieldset class="content">
-                    <label for="barcode">Barcode</label>
-                    <input id="barcode" type="text" name="barcode" />
-                    <div class="wrapper">
-                        <label for="email">New email</label>
-                        <input id="email" type="email" name="updatedEmail" />
-                    </div>
-                    <div class="wrapper">
-                        <label for="email">Confirm new email</label>
-                        <input id="email" type="email" name="updatedEmail_confirm" />
-                    </div>
-                    <div class="wrapper">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" name="password" />
-                    </div>
+                    <label for="barcode">Barcode<input id="barcode" type="text" name="barcode" /></label>
+                    <label for="email">New email<input id="email" type="email" name="updatedEmail" /></label>
+                    <label for="email">Confirm new email<input id="email" type="email" name="updatedEmail_confirm" /></label>
+                    <label for="password">Password<input id="password" type="password" name="password" /></label>
                     <div class="buttonSection">
                         <button type="submit" name="submit">Change</button>
                     </div>
@@ -76,16 +60,9 @@
             <div class="hidden center">
                 <?php echo form_open('housekeeper/updateBarcode'); ?>
                 <fieldset class="content">
-                    <label for="barcode">New Barcode</label>
-                    <input id="barcode" type="text" name="updatedBarcode" />
-                    <div class="wrapper">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" name="email" />
-                    </div>
-                    <div class="wrapper">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" name="password" />
-                    </div>
+                    <label for="barcode">New Barcode<input id="barcode" type="text" name="updatedBarcode" /></label>
+                    <label for="email">Email<input id="email" type="email" name="email" /></label>
+                    <label for="password">Password<input id="password" type="password" name="password" /></label>
                     <div class="buttonSection">
                         <button type="submit" name="submit">Change</button>
                     </div>
@@ -98,12 +75,8 @@
             <div class="hidden center">
                 <?php echo form_open('housekeeper/toggleBarcodeLogin'); ?>
                 <fieldset class="content">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" name="email" />
-                    <div class="wrapper">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" name="password" />
-                    </div>
+                    <label for="email">Email<input id="email" type="email" name="email" /></label>
+                    <label for="password">Password<input id="password" type="password" name="password" /></label>
                     <div class="buttonSection">
                         <button type="submit" name="disable" value="disable">Disable</button>
                         <button type="submit" name="enable" value="enable">Enable</button>

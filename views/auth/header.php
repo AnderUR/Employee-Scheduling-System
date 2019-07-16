@@ -4,11 +4,21 @@
 
 <head>
     <style>
+        @media only screen and (max-width: 500px) {
+            .buttonSection>button:not(:first-child) {
+                margin-top: 20px;
+            }
+
+            .content>label:not(:first-child) {
+                margin-top: 20px;
+            }
+        }
+
         body {
             height: 100%;
             font-size: 18px;
             background-image: url("/LibServices/assets/ess_assets/img/SignInOutBackground.png");
-            background-color: lightblue; 
+            background-color: lightblue;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -42,6 +52,7 @@
             border-style: double;
             border-width: 5px;
             border-color: white;
+            text-align: center;
         }
 
         div.content p {
@@ -61,10 +72,12 @@
         }
 
         label {
+            display: inline-block;
             color: white;
         }
 
         input {
+            display: block;
             font-size: inherit;
         }
 
@@ -85,10 +98,11 @@
 
         .buttonSection {
             text-align: center;
-            margin-top: 22px;
+            margin-top: 20px;
         }
 
-        button[type="submit"],  input[type="submit"] {
+        button[type="submit"],
+        input[type="submit"] {
             background-color: #ffb124;
             border-radius: 4px;
             box-shadow: 0px 4px 10px #f4cb95;
