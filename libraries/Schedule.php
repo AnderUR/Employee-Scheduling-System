@@ -456,6 +456,11 @@ class Schedule{
              *      set scheduledDate
              *      call recursive obj this.insert
              */
+             $db_debug = $this->instance->db->db_debug;
+             $this->instance->db->db_debug = false;
+
+             $this->instance->db->trans_start(); //Queries will be rolled back if set to true, useful for testing.
+
             $this->instance->db->where('id', $scheduledArray['id']);
             $this->instance->db->update('ca_schedules.ScheduledShifts', $scheduledArray);
 
@@ -486,10 +491,22 @@ class Schedule{
                     $this->recursiveID = $scheduledArray['id'];
                     $this->listView = 0;
                     $this->scheduledDate = date('Y-m-d', strtotime($scheduledArray['scheduledDate'] . '+7days'));
-                    
+
                     $this->insert();
                 }
             }
+
+            $this->instance->db->trans_complete(); //Query will be rolled back if fail
+
+            if ($this->instance->db->trans_status() === false) {
+                $trans_status = 0;
+            } else {
+                $trans_status = 1;
+            }
+
+            $this->instance->db->db_debug = $db_debug;
+
+            return $trans_status;
         }
     }
 
@@ -1017,7 +1034,7 @@ class Schedule{
     }
 
     /**
-     * Adds new employee with a randomly generated string. 
+     * Adds new employee with a randomly generated string.
      * Emails the employee the new barcode.
      * The new barcode can be used to sign in via barcode, or used as password for email/password sign in.
      */
@@ -1057,18 +1074,18 @@ class Schedule{
                 );
 
                 if( $me->db->insert('libservices.users_groups', $user_group) ) {
-                
+
                 $emailData['title'] = "ESS Account Mangement";
                 $emailData['titleImgSrc'] = 'C:/wamp64/www/LibServices/assets/ess_assets/img/userIcon.png';
                 $emailData['emailBody'] = 'A new account has been created for you.<br><br><b>'.$firstname.' '.$lastname
                         .'</b><br><br>You temporary barcode and password is <br><b>'.$newBarcode
                         .'</b><br><br>Login at http://localhost/LibServices/index.php/auth/login';
-    
+
                 $emailData['helpContact'] = $me->load->view('timesheet/emails/supervisorContactInfo', '', true);
-                       
+
                 $emailContent = $me->load->view('templates/email/boilerplate', $emailData, true);
                 $me->notify->email_user($insertedID, $emailContent, false, "ESS Account Created");
-    
+
                 return $insertedID;
                 } else {
                     return '';
@@ -1076,7 +1093,7 @@ class Schedule{
             } else {
                 return '';
             }
-            
+
         }
     }
 

@@ -591,7 +591,7 @@ class Timesheet extends CI_Controller
          */
         server::require_login('timesheet/manageEmployee');
         $curUser = new webuser();
-        
+
         if ($curUser->hasPrivilege()) {
             $data = $this->input->post();
             if (!isset($data['chk_isRecursive'])) {
@@ -713,15 +713,18 @@ class Timesheet extends CI_Controller
                         $thisSchedule->updateInstance();
                         redirect(schedule::popNavigatingUrl());
                     } else {
-                        $thisSchedule->update();
-                        redirect(schedule::popNavigatingUrl());
+                      if($thisSchedule->update()) {
+                          redirect(schedule::popNavigatingUrl());
+                      } else {
+                          echo "<center>This shift could not be updated. If you are trying to update the recursive date, note that you cannot update it if a shift that belongs to this recurive shift has been worked. <br>".anchor(schedule::popNavigatingUrl(), 'Go back')."</center>";
+                      }
                     }
                 } else {
                     echo "<center>End time must be after start time!<br>".anchor(schedule::popNavigatingUrl(), 'Try again')."</center>";
                 }
             } elseif (isset($data['markTimesheet'])) {
                 $schedule = new schedule($data['id']);
-                
+
                 if($data['endTime'] >= $data['startTime'] && $data['endTime'] != $data['startTime']) {
                     $schedule->markScheduledWorked($data);
                     redirect(schedule::popNavigatingUrl());
@@ -739,11 +742,11 @@ class Timesheet extends CI_Controller
                 //                }
                 redirect(schedule::popNavigatingUrl());
             } else {
-                
+
                 $shiftStatus = Shift::getShiftStatus($data['id']);
                 if(isset($shiftStatus)) {
                     echo "<center>This shift cannot be removed until it is removed from the worked shifts first. <br>".anchor(schedule::popNavigatingUrl(), 'Go back')."</center>";
-                } else {  
+                } else {
                     $schedule = new schedule($data['id']);
                     $schedule->setToRemove();
                     if (isset($data['updateInstance']) && ($data['updateInstance'] == 1)) {
@@ -756,7 +759,7 @@ class Timesheet extends CI_Controller
                         echo "<center>Error. Make sure this shift has not been worked or signed into. Otherwise, contact your administrator. <br>".anchor(schedule::popNavigatingUrl(), 'Go back')."</center>";
                        }
                     }
-                }                
+                }
             }
         } else {
             echo "<center>You do not have enough privilege to view this Page!<br>".anchor('auth/login', 'LOGIN')."</center>";
@@ -773,7 +776,7 @@ class Timesheet extends CI_Controller
          */
         server::require_login('timesheet/manageEmployee');
         $curUser = new webuser();
-        
+
         if ($curUser->is_supervisor()) {
             $data = $this->input->post();
             if (isset($data['submit'])) {
@@ -813,7 +816,7 @@ class Timesheet extends CI_Controller
     }
 
     /**
-     * Changes the semester for the specified semester id passed through uri. 
+     * Changes the semester for the specified semester id passed through uri.
      */
     function setSemester()
     {
@@ -827,25 +830,25 @@ class Timesheet extends CI_Controller
         } else {
             echo "<center>You do not have enough privilege to view this Page!<br>".anchor('auth/login', 'LOGIN')."</center>";
         }
-        
+
     }
 
     /**
      * For setting, adding, and editing semesters. Also has section for implementing future delete semester.
      * Note: Best to separate functionality in future improvements of this system.
      */
-    function addSemester() 
+    function addSemester()
     {
         /*
           $postUrl		the url of where this form will post to set semester
           $semesters    details on all the semester currently ($id, $name, $startDate, $endDate)
          */
         server::require_login('timesheet/adminPanel');
-        $curUser = new Webuser(); 
+        $curUser = new Webuser();
 
         if($curUser->is_supervisor()) {
 
-            $postData = $this->input->post();  
+            $postData = $this->input->post();
 
             if (isset($postData['submit'])) {
                 if (!isset($postData['semester_name'])) {
@@ -904,7 +907,7 @@ class Timesheet extends CI_Controller
 
         if ($curUser->is_supervisor()) {
             $semesterPost = $this->input->post();
-            
+
             $semesterID = $semesterPost['semesterID'];
             $schedule = new schedule();
             $semesterData = $schedule->getSemesterByID($semesterID);
@@ -1118,7 +1121,7 @@ class Timesheet extends CI_Controller
 
     /**
      * Gets the necessary data from the Schedule class to display the correct employee and time ranges for the worked shifts tab in the employee page.
-     * Uses uris to obtain the data. 
+     * Uses uris to obtain the data.
      * privileged content viewing is determined in the view.
      */
     function manageEmployee()
@@ -1177,7 +1180,7 @@ class Timesheet extends CI_Controller
     }
 
     /**
-     * Prints the currently logged in user as json data. 
+     * Prints the currently logged in user as json data.
      */
     /*function currentUser()
     {
@@ -1192,7 +1195,7 @@ class Timesheet extends CI_Controller
     }*/
 
     /**
-     * Sign in/out page for employees. 
+     * Sign in/out page for employees.
      */
     function ipadPage()
     {
@@ -1200,7 +1203,7 @@ class Timesheet extends CI_Controller
     }
 
     /**
-     * Convenience page for sign in/out for specific employee. 
+     * Convenience page for sign in/out for specific employee.
      * The user data is set in the view based on the barcode passed in the uri segment 3
      */
     function ipadPageCA()
@@ -1425,7 +1428,7 @@ class Timesheet extends CI_Controller
     }
 
     /**
-     * Displays exceptions added to a semester. 
+     * Displays exceptions added to a semester.
      * This is used in the Edit Semester form accessed from the admin panel > semester tab > semester table > edit
      */
     function viewExceptionAnnouncement()
@@ -1460,8 +1463,8 @@ class Timesheet extends CI_Controller
     {
         server::require_login('timesheet/statusIndex');
         $curUser = new Webuser();
-        
-        if($curUser->is_supervisor()) {   
+
+        if($curUser->is_supervisor()) {
             $ids = $this->input->post('emplID_schID');
             if (isset($ids)) {
                 $scheduleID['scheduleID'] = $ids['id'];
@@ -1591,7 +1594,7 @@ class Timesheet extends CI_Controller
 
     /**
      * Sends email notifications to employees if there is an exception for today.
-     * This function requires an automated script to be run everyday. 
+     * This function requires an automated script to be run everyday.
      * Edit the $emailData to modify the email content.
      */
     function sendMorningReminder()
@@ -1618,7 +1621,7 @@ class Timesheet extends CI_Controller
                 }
             }
             $announcements = Schedule::getAnnouncementsOnEndDate(Schedule::getDateFilterException());
-        
+
             if (sizeof($announcements) > 0) {
                 $data['announcements'] = $announcements;
                 $emailData['title'] = "ESS Notice";
@@ -1634,12 +1637,12 @@ class Timesheet extends CI_Controller
                 $this->notify->email_user(3, $emailContent, false, "Announcement reminder");
             }
         } else {
-            echo "<center>You have to have admin privilege privilege to view this Page!<br>".anchor('auth/login', 'LOGIN')."</center>"; 
+            echo "<center>You have to have admin privilege privilege to view this Page!<br>".anchor('auth/login', 'LOGIN')."</center>";
         }
     }
 
     /**
-     * This function needs editing, specially the email section. 
+     * This function needs editing, specially the email section.
      * Please refer to the sendMorningReminder function in this controller for an example.
      */
     //    function sendLateCASigninReminder() {
