@@ -53,21 +53,21 @@ The email template will look similar to this:
 
 ## Built With
 
-- CodeIgniter PHP framework - https://www.codeigniter.com/
-- Foundation for Sites by ZURB front-end framework - https://foundation.zurb.com
+- [CodeIgniter PHP framework](https://www.codeigniter.com/)
+- [Foundation for Sites by ZURB front-end framework](https://foundation.zurb.com)
 
 ## Authors
 
-- Anderson Uribe-Rodriguez
+- [Anderson Uribe-Rodriguez](https://andersonuribe.com)
 - [Yi Meng Chen](https://www.linkedin.com/in/yimechen?trk=chatin_wnc_redirect_pubprofile&ctx=cnpartner&trk=chatin_me_view-profile_wnc&from=singlemessage&isappinstalled=0)
 
 ## Acknowledgments
 
 #### Plugins
-- CodeIgniter Ion Auth by Ben Edmunds - https://github.com/benedmunds/CodeIgniter-Ion-Auth
-- signature pad by Szymon Nowak - https://github.com/szimek/signature_pad
-- jQuery.floatThead by Misha Koryak - http://mkoryak.github.io/floatThead/
-- jQuery Timepicker Addon by Trent Richardson - https://trentrichardson.com/examples/timepicker/
+- [CodeIgniter Ion Auth by Ben Edmunds](https://github.com/benedmunds/CodeIgniter-Ion-Auth)
+- [signature pad by Szymon Nowak](https://github.com/szimek/signature_pad)
+- [jQuery.floatThead by Misha Koryak](http://mkoryak.github.io/floatThead/)
+- [jQuery Timepicker Addon by Trent Richardson](https://trentrichardson.com/examples/timepicker/)
 
 #### People or Insitution
 - Ursula C. Schwerin Library at the City College of Technology of New York for providing the servers and helping shape the application through usage and recommendations. 
